@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blast1.wav-66c6c9768e9c8cd2eefd845cd8d2d7a9.sample"
+
+[deps]
+
+source_file="res://art/sounds/blast1.wav"
+dest_files=[ "res://.import/blast1.wav-66c6c9768e9c8cd2eefd845cd8d2d7a9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

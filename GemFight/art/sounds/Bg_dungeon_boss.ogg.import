@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bg_dungeon_boss.ogg-c0bed9bd55de2187cb456961ce9ff429.oggstr"
+
+[deps]
+
+source_file="res://art/sounds/Bg_dungeon_boss.ogg"
+dest_files=[ "res://.import/Bg_dungeon_boss.ogg-c0bed9bd55de2187cb456961ce9ff429.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

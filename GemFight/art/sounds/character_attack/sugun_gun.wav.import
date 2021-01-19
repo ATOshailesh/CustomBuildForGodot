@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sugun_gun.wav-dcca3a02ea71bd6d87fc17e9f2b0a98a.sample"
+
+[deps]
+
+source_file="res://art/sounds/character_attack/sugun_gun.wav"
+dest_files=[ "res://.import/sugun_gun.wav-dcca3a02ea71bd6d87fc17e9f2b0a98a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

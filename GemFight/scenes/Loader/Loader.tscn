@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Loader/Loader.gd" type="Script" id=1]
+[ext_resource path="res://art/extra/act_loader.png" type="Texture" id=2]
+[ext_resource path="res://font/CarterOne.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+outline_size = 1
+outline_color = Color( 0.0392157, 0.0352941, 0.0352941, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+length = 1.4
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.17, 0.32, 0.47, 0.62, 0.78, 0.92, 1.08, 1.25, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 40.0, 80.0, 120.0, 160.0, 200.0, 240.0, 280.0, 320.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.66, 1.39 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.419608, 0.584314, 0.870588, 1 ), Color( 0.901961, 0.909804, 0.0470588, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.28, 0.51, 0.75, 0.99 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Loading", "Loading.", "Loading..", "Loading...", "Loading...." ]
+}
+
+[node name="Loader" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.863708
+margin_right = -0.863708
+color = Color( 0.0235294, 0.0235294, 0.0235294, 0.796078 )
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = -20.0
+margin_right = 40.0
+margin_bottom = 20.0
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( 6, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -0.726715
+margin_right = 40.0
+margin_bottom = 22.2733
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.305882, 0.705882, 0.219608, 1 )
+text = "Loading"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/round = SubResource( 2 )
+

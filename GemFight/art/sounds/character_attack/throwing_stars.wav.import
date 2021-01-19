@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/throwing_stars.wav-dbcf4207b2674247bfb063ce42180e92.sample"
+
+[deps]
+
+source_file="res://art/sounds/character_attack/throwing_stars.wav"
+dest_files=[ "res://.import/throwing_stars.wav-dbcf4207b2674247bfb063ce42180e92.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

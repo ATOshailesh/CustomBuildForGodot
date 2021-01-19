@@ -1,0 +1,200 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/VS screen/VSScreen.gd" type="Script" id=1]
+[ext_resource path="res://art/VSScreen/VS-Text.png" type="Texture" id=2]
+[ext_resource path="res://art/VSScreen/VS-BG.png" type="Texture" id=3]
+[ext_resource path="res://art/VSScreen/VSLOOK.png" type="Texture" id=4]
+[ext_resource path="res://font/CarterOne.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "loadp1"
+length = 0.8
+step = 0.01
+
+[sub_resource type="Animation" id=2]
+resource_name = "loadp2"
+length = 0.8
+
+[sub_resource type="Animation" id=3]
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Versus:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 0.25, 0.25 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Versus:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.26, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 160.0, 360.0 ]
+}
+
+[sub_resource type="ShaderMaterial" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=5]
+blend_mode = 1
+
+[sub_resource type="DynamicFont" id=6]
+size = 36
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="Environment" id=7]
+background_mode = 4
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/2 = true
+glow_levels/4 = true
+glow_levels/6 = true
+glow_levels/7 = true
+glow_intensity = 5.73
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.968627 )
+
+[node name="versus" type="AnimationPlayer" parent="."]
+autoplay = "zoomout"
+anims/loadp1 = SubResource( 1 )
+anims/loadp2 = SubResource( 2 )
+anims/zoomout = SubResource( 3 )
+
+[node name="Versus" type="Sprite" parent="."]
+visible = false
+position = Vector2( 192.965, 318.829 )
+rotation = 6.28319
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+
+[node name="Container" type="Control" parent="."]
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 0.6
+margin_left = 10.0
+margin_right = -10.0
+margin_bottom = 66.7
+rect_clip_content = true
+
+[node name="Background" type="TextureRect" parent="Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.01404
+margin_top = -0.601166
+margin_right = 392.986
+margin_bottom = 1099.95
+texture = ExtResource( 3 )
+
+[node name="player1" type="Control" parent="Container"]
+editor/display_folded = true
+anchor_right = 0.45
+anchor_bottom = 0.7
+margin_left = -4.0
+margin_top = 6.0
+margin_right = -1.0
+margin_bottom = 6.0
+rect_clip_content = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Container/player1"]
+material = SubResource( 4 )
+anchor_left = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = 10.0
+margin_right = 126.82
+margin_bottom = 154.585
+rect_scale = Vector2( 0.4, 0.4 )
+
+[node name="player2" type="Control" parent="Container"]
+editor/display_folded = true
+anchor_left = 0.55
+anchor_right = 1.0
+anchor_bottom = 0.7
+margin_top = 6.0
+margin_bottom = 6.0
+rect_clip_content = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Container/player2"]
+anchor_left = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.33514e-05
+margin_top = 10.0
+margin_right = 191.82
+margin_bottom = 152.0
+rect_scale = Vector2( 0.4, 0.4 )
+
+[node name="vs" type="Control" parent="Container"]
+editor/display_folded = true
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.5
+margin_left = 1.09999
+margin_top = 25.0
+margin_right = -3.90001
+margin_bottom = 25.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Container/vs"]
+material = SubResource( 5 )
+position = Vector2( 35, 33 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 4 )
+
+[node name="fight" type="Label" parent="Container"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -178.0
+margin_top = -62.45
+margin_right = 178.0
+margin_bottom = -6.45003
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.858824, 0.752941, 0.0431373, 1 )
+text = "FIGHT"
+align = 1
+valign = 1
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tween3" type="Tween" parent="."]
+
+[node name="Tween2" type="Tween" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 7 )
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="tween_completed" from="Tween3" to="." method="_on_Tween_tween_completed"]
+[connection signal="tween_completed" from="Tween2" to="." method="_on_Tween_tween_completed"]

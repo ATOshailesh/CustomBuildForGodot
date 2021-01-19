@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/anime/chainLable.gd" type="Script" id=1]
+[ext_resource path="res://font/kirby-classic.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 2 )
+
+[node name="chainLable" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 159.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.882812, 0.529935, 0.117249, 1 )
+text = "2 Chain "
+align = 1
+valign = 1
+
+[node name="moveup" type="Tween" parent="."]
+
+[connection signal="tween_completed" from="moveup" to="." method="_on_moveup_tween_completed"]
